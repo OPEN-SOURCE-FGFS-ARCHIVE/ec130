@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2009 Heiko Schulz, Heiko.H.Schulz@gmx.net
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+<PropertyList>
+
+  <path>mgpu.ac</path>
+<!--
+  <nopreview/>
+-->
+  <!--model of a small mobile Ground Power Unit After the AXA 28VDC 50HZ-->
+  
+  <animation>
+    <type>select</type>
+    <object-name>MGPU</object-name>
+    <object-name>cable_roll</object-name>
+    <condition>
+      <property>gear/gear[0]/wow</property>
+      <greater-than>
+        <property>controls/electric/external-power</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>cable</object-name>
+    <condition>
+      <property>gear/gear[0]/wow</property>
+      <property>controls/electric/external-power</property>
+      <greater-than>
+        <property>sim/model/ec130/mgpu/position-norm</property>
+        <value>0.99</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>MGPU</object-name>
+    <object-name>cable_roll</object-name>
+    <object-name>cable</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>ec130.toggle_powersupply()</script>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>MGPU</tooltip-id>
+        <label>remove unit</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- compensate for gear compression -->
+  <animation>
+    <type>translate</type>
+    <property>gear/gear[0]/compression-m</property>
+    <factor>1</factor>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <property>sim/model/ec130/mgpu/position-norm</property>
+    <interpolation>
+      <entry><ind>1.000000</ind><dep>0.000000</dep></entry>
+      <entry><ind>0.000000</ind><dep>25.000000</dep></entry>
+    </interpolation>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- compensate for pitch of aircraft, keep level -->
+  <animation>
+    <type>rotate</type>
+    <property>orientation/pitch-deg</property>
+    <factor>-0.75</factor>
+    <center>
+      <x-m>-1.090</x-m>
+      <y-m> 0.000</y-m>
+      <z-m>-0.654</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList> 
+
+  <path>chronograph.ac</path>
+
+  <animation>
+    <object-name>mount</object-name>
+    <object-name>bkg</object-name>
+    <object-name>knob</object-name>
+    <object-name>button</object-name>
+    <object-name>disk</object-name>
+    <object-name>face</object-name>
+    <object-name>HourHand</object-name>
+    <object-name>MinuteHand</object-name>
+    <object-name>SecondHand</object-name>
+    <object-name>ElapsedMinutesHand</object-name>
+
+    <object-name>time-offset-left</object-name>
+    <object-name>time-offset-right</object-name>
+    <object-name>chronometer-button</object-name>
+    
+  </animation>
+
+<!--Working For Rembrandt-->
+
+<animation>
+<object-name>vitre</object-name>
+</animation>
+
+<animation>
+<type>noshadow</type>
+<object-name>vitre</object-name>
+</animation>
+
+
+
+<effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+   <object-name>vitre</object-name>
+    <condition>
+      <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
+  </effect>
+<!--Working For Rembrandt-->
+<!--
+
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>HourHand</object-name>
+    <object-name>MinuteHand</object-name>
+    <object-name>SecondHand</object-name>
+    <object-name>ElapsedMinutesHand</object-name>
+   <emission>
+			<red>0.28</red>
+			<green>0.40</green>
+			<blue>0.24</blue>
+<factor-prop>controls/lighting/instrument-lights-norm</factor-prop>
+		</emission>
+  </animation>
+  
+  -->
+  
+    <!-- dimming -->
+  <animation>
+    <name>all</name>
+     <object-name>face</object-name>
+    <object-name>HourHand</object-name>
+    <object-name>MinuteHand</object-name>
+    <object-name>SecondHand</object-name>
+    <object-name>ElapsedMinutesHand</object-name>
+  </animation>
+  
+  
+  
+
+  <animation>
+    <type>material</type>
+    <object-name>all</object-name>
+    <condition>
+      <property>systems/electrical/outputs/instrument-lights-norm</property>
+      <equals>
+        <property>controls/lighting/instrument-lights-selection</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  1.0 </blue>
+      <factor>0.5</factor>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>all</object-name>
+    <condition>
+      <greater-than>
+        <property>controls/lighting/instrument-lights-selection</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  1.0 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    </emission>
+  </animation>
+  
+  
+  
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>HourHand</object-name>
+    <property>instrumentation/clock/indicated-sec</property>
+    <factor> 0.00833333333333333 </factor>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>MinuteHand</object-name>
+    <property>instrumentation/clock/indicated-sec</property>
+    <factor> 0.1 </factor>
+    <axis> 
+    <x> -1 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>SecondHand</object-name>
+    <property>instrumentation/clock/elapsed-sec</property>
+    <factor> 6 </factor>
+    <axis> 
+    <x> -1 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>ElapsedMinutesHand</object-name>
+    <property>instrumentation/clock/elapsed-sec</property>
+    <factor> 0.1 </factor>
+    <axis> 
+    <x> -1 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- Clock Setting Knob -->
+  <animation>
+    <type>pick</type>
+    <object-name>time-offset-left</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/clock/offset-sec</property>
+        <step>-60</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>time-offset-left</object-name>
+    <visible>false</visible>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/clock/offset-sec</property>
+        <step>-3600</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>time-offset-right</object-name>
+    <visible>fale</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/clock/offset-sec</property>
+        <step>60</step>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>time-offset-right</object-name>
+    <visible>false</visible>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/clock/offset-sec</property>
+        <step>3600</step>
+      </binding>
+    </action>
+  </animation>
+
+ <!-- Chronometer Start Stop Button -->
+  <animation>
+    <type>pick</type>
+    <object-name>chronometer-button</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>chronograph.click()</script>
+      </binding>
+    </action>
+  </animation>
+  
+  
+  <!-- Coompositor lights-->
+  
+  <light>
+  <name>dash1</name>
+  <type>spot</type>
+  <position>
+    <x-m>0.017</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0</z-m>
+  </position>
+  <direction>
+    <x>-1.0</x>
+    <y>0</y>
+    <z>0</z>
+  </direction>
+  <ambient>
+    <r>0</r>
+    <g>0</g>
+    <b>1</b>
+    <a>1</a>
+  </ambient>
+  <diffuse>
+    <r>0</r>
+    <g>1</g>
+    <b>0</b>
+    <a>1</a>
+  </diffuse>
+  <specular>
+    <r>0</r>
+    <g>1</g>
+    <b>0</b>
+    <a>1</a>
+  </specular>
+    <color>
+      <r>0.8</r>
+      <g>0.5</g>
+      <b>0.5</b>
+      <a>1.0</a>
+    </color>
+ <attenuation>
+    <c>1</c>
+    <l>1.5</l>
+    <q>3.5</q>
+  </attenuation>
+  <spot-exponent>3</spot-exponent>
+  <spot-cutoff>70</spot-cutoff>
+  <range-m>0.05</range-m>
+   <intensity>0.1</intensity>
+  <dim-factor>
+    <property>systems/electrical/outputs/instrument-lights-norm</property>
+  </dim-factor>
+ 
+</light>
+
+
+<animation>
+  <type>select</type>
+  <object-name>dash1</object-name>
+		
+  <condition>
+  
+   <equals>
+    <property>controls/lighting/turn-off-lights</property>
+    <value>true</value>
+   </equals>
+  
+  </condition>
+ </animation>
+
+</PropertyList>
+

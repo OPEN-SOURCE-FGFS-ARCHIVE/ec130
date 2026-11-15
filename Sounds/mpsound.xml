@@ -1,0 +1,523 @@
+<?xml version="1.0"?>
+<!--
+  thanks to the SAR simulation (GPL) for the helicopter sounds,
+  and the Urban game (LGPL) for the weapon sounds
+
+  +x = aft
+  +y = left
+  +z = up
+
+******************************************************************************
+*                                   ________                                 *
+*                                  |  ____  |                                *
+*  R44 Sounds by                   | |    | |                                *
+*                                  | |____| |  ___   ___   ___   ___         *
+*  May 2011                        |  ____-<  | _ | | _ | | _ | | _ | |\   | *
+*                                  | |    | | ||_|| |___| || || || || | \  | *
+*  BACON GUILLAUME                 | |____| | |   | | _ | ||_|| ||_|| |  \ | *
+*                                  |________| |_|_| |___| |___| |___| |   \| *
+*                                                                            *
+******************************************************************************
+Made with Audacity on Debain Squeeze
+All Sounds are sampled and recorded by BaBoOn May 2011
+
+baboon922@hotmail.com
+
+-->
+
+<PropertyList>
+
+  <fx>
+
+  
+
+    <starter>
+      <name>starter0_start</name>
+      <mode>once</mode>
+      <path>Aircraft/ec130/Sounds/starter_start.wav</path>
+      <condition>
+        <property>controls/engines/engine[0]/starter</property>
+      </condition>
+      <volume>
+        <factor>0.1</factor>
+      </volume>
+      <position>
+        <x>-0.88</x>
+        <y>0.40</y>
+        <z>0.5</z>
+      </position>
+      <reference-dist>5</reference-dist>
+      <max-dist>10</max-dist>
+    </starter>
+
+    <starter>
+      <name>starter0_loop</name>
+      <mode>looped</mode>
+      <path>Aircraft/ec130/Sounds/starter_loop.wav</path>
+      <condition>
+        <property>controls/engines/engine[0]/starter</property>
+      </condition>
+      <delay-sec>11.6</delay-sec>
+      <volume>
+        <factor>0.1</factor>
+      </volume>
+      <position>
+        <x>-0.88</x>
+        <y>0.40</y>
+        <z>0.5</z>
+      </position>
+      <reference-dist>5</reference-dist>
+      <max-dist>10</max-dist>
+    </starter>
+
+    <starter>
+      <name>starter0_stop</name>
+      <mode>once</mode>
+      <path>Aircraft/ec130/Sounds/starter_stop.wav</path>
+      <condition>
+        <not>
+          <property>controls/engines/engine[0]/starter</property>
+        </not>
+      </condition>
+      <volume>
+        <factor>0.3</factor>
+      </volume>
+      <position>
+        <x>-0.88</x>
+        <y>0.40</y>
+        <z>0.5</z>
+      </position>
+      <reference-dist>5</reference-dist>
+      <max-dist>10</max-dist>
+    </starter>
+
+    <!-- turbine start -->
+    <!-- problems:
+           - prevent from being played during flight
+           - smooth transition to turbine-loop
+           - prevent from being played during shutdown
+     -->
+   
+
+    <engine>
+      <name>turbine0-start-outside</name>
+      <mode>once</mode>
+      <path>Aircraft/ec130/Sounds/strt_ec135_out.wav</path>
+      <condition>
+        <not>
+          <property>sim/current-view/internal</property>
+        </not>
+        <greater-than>
+          <property>engines/engine[0]/n1-pct</property>
+          <value>0.1</value>
+        </greater-than>
+        <less-than>
+          <property>engines/engine[0]/n2-pct</property>
+          <property>engines/engine[0]/n1-pct</property>
+        </less-than>
+        <less-than>
+          <property>rotors/main/rpm</property>
+          <value>230</value>
+        </less-than>
+        <not>
+          <property>sim/crashed</property>
+        </not>
+      </condition>
+      <volume>
+        <factor>0.03</factor>
+      </volume>
+      <volume>
+        <property>sim/model/sound/volume</property>
+        <factor>6</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>2000</max-dist>
+    </engine>
+
+    <!-- turbine loop -->
+   
+
+    <engine>
+      <name>turbine0-loop-outside</name>
+      <mode>looped</mode>
+      <path>Aircraft/ec130/Sounds/EC130_Turbine_Loop.wav</path>
+      <condition>
+        <not>
+          <property>sim/current-view/internal</property>
+        </not>
+        <property>engines/engine[0]/running</property>
+        <greater-than-equals>
+          <property>rotors/main/rpm</property>
+          <value>230</value>
+        </greater-than-equals>
+        <not>
+          <property>sim/crashed</property>
+        </not>
+      </condition>
+      <delay-sec>0</delay-sec>
+      <volume>
+        <factor>0.03</factor>
+      </volume>
+      <volume>
+        <property>sim/model/sound/volume</property>
+        <factor>5</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>2000</max-dist>
+    </engine>
+
+    <!-- turbine shutdown -->
+    <!-- problems:
+          - differ between shutdown and engine is off ?
+          - play when engine was on but cutoff initiated
+          - play when emergency switch is active
+    -->
+  
+    <engine>
+      <name>turbine0-shutdown-outside</name>
+      <mode>once</mode>
+      <path>Aircraft/ec130/Sounds/shut_ec_out.wav</path>
+      <condition>
+        <not>
+          <property>sim/current-view/internal</property>
+        </not>
+        <not>
+          <property>engines/engine[0]/running</property>
+        </not>
+        <greater-than>
+          <property>engines/engine[0]/n1-pct</property>
+          <value>0.1</value>
+        </greater-than>
+        <or>
+          <not>
+            <property>controls/engines/engine/startselector</property>
+          </not>
+          <property>controls/engines/engine/cutoff</property>
+          <property>controls/electric/emergency-switch</property>
+          <property>sim/crashed</property>
+        </or>
+      </condition>
+      <delay-sec>0</delay-sec>
+      <volume>
+        <factor>0.03</factor>
+      </volume>
+      <volume>
+        <property>sim/model/sound/volume</property>
+        <factor>7</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>2000</max-dist>
+    </engine>
+
+    <!-- rotor -->
+  
+
+     <rotor>
+      <name>rotor-outside</name>
+      <mode>looped</mode>
+      <path>Aircraft/ec130/Sounds/rotor.wav</path>
+      <condition>
+        <and>
+          <not>
+            <property>sim/current-view/internal</property>
+          </not>
+          <greater-than>
+            <property>rotors/main/rpm</property>
+            <value>50</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>rotors/main/rpm</property>
+        <factor>0.002</factor>
+      </volume>
+      <pitch>
+        <property>rotors/main/rpm</property>
+        <factor>0.00252</factor>
+        <offset>0</offset>
+        <min>0</min>
+        <max>1.5</max>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>4000</max-dist>
+    </rotor>
+
+    <rotor>
+      <name>stall</name>
+      <mode>looped</mode>
+      <path>Aircraft/ec130/Sounds/Xhe5.wav</path>
+      <condition>
+        <and>
+          <greater-than>
+            <property>rotors/main/rpm</property>
+            <value>50</value>
+          </greater-than>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>sim/model/sound/volume</property>
+        <factor>1.15</factor>
+      </volume>
+      <volume>
+        <property>rotors/main/stall-filtered</property>
+        <factor>75</factor>
+        <max>0.9</max>
+      </volume>
+      <pitch>
+        <property>rotors/main/rpm</property>
+        <factor>0.00252</factor>
+        <offset>0</offset>
+        <max>1.75</max>
+      </pitch>
+      <reference-dist>200</reference-dist>
+      <max-dist>1500</max-dist>
+    </rotor>
+
+     <rotor>
+      <name>blade-vortex-interaction</name>
+      <mode>looped</mode>
+      <path>Aircraft/ec130/Sounds/blade_vortex.wav</path>
+      <condition>
+        <greater-than>
+          <property>sim/sound/vibration</property>
+          <value>0.01</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <property>sim/sound/vibration</property>
+        <factor>1.55</factor>
+      </volume>
+      <pitch>
+        <property>rotors/main/rpm</property>
+        <factor>0.00252</factor>
+        <offset>0</offset>
+        <min>0</min>
+        <max>1.5</max>
+      </pitch>
+      <reference-dist>500</reference-dist>
+      <max-dist>3000</max-dist>
+    </rotor>
+	
+	
+		
+		<rotor>
+			<name>vortex1-front-left-ext</name>
+			<path>Aircraft/ec130/Sounds/blade_vortex.wav</path>
+			<mode>looped</mode>
+			<condition>
+			<not>
+				<property>sim/current-view/internal</property>
+				</not>
+                <greater-than>
+                    <property>/sim/model/ec130/headsetholder/position-deg</property>
+                    <value>0</value>
+                </greater-than>
+				<not>
+					<property>/sim/crashed</property>
+				</not>
+			</condition>
+			<volume>
+				<property>/sim/sound/vibration</property>
+				<factor>6</factor>
+			</volume>
+            <volume>
+				<property>/sounds/H145/rotors/IGE2</property>
+				<factor>0.5</factor>
+			</volume>
+			<pitch>
+				<property>/rotors/main/rpm</property>
+				<offset>0</offset>
+				<factor>0.00261096605744</factor>
+			</pitch>
+			<position>
+				<x>.1</x>
+				<y>.14</y>
+				<z>0.4</z>
+			</position>
+			<reference-dist>100</reference-dist>
+			<max-dist>1000</max-dist>
+		</rotor>
+		<rotor>
+			<name>vortex1-front-right-ext</name>
+			<path>Aircraft/ec130/Sounds/blade_vortex.wav</path>
+			<mode>looped</mode>
+			<condition>
+			<not>
+				<property>sim/current-view/internal</property>
+				</not>
+                <greater-than>
+                    <property>/sim/model/ec130/headsetholder/position-deg</property>
+                    <value>0</value>
+                </greater-than>
+				<not>
+					<property>/sim/crashed</property>
+				</not>
+			</condition>
+			<volume>
+				<property>/sim/sound/vibration</property>
+				<factor>6</factor>
+			</volume>
+            <volume>
+				<property>/sounds/H145/rotors/IGE2</property>
+				<factor>0.5</factor>
+			</volume>
+			<pitch>
+				<property>/rotors/main/rpm</property>
+				<offset>0</offset>
+				<factor>0.00261096605744</factor>
+			</pitch>
+			<position>
+				<x>.1</x>
+				<y>-.86</y>
+				<z>0.4</z>
+			</position>
+			<reference-dist>100</reference-dist>
+			<max-dist>1000</max-dist>
+		</rotor>
+
+   
+
+    <!-- crash -->
+    <crash>
+      <name>intense ground contact</name>
+      <mode>once</mode>
+      <path>Sounds/crash.wav</path>
+      <property>sim/crashed</property>
+      <volume>
+        <factor>1</factor>
+      </volume>
+      <pitch>
+        <factor>0.1</factor>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>2000</max-dist>
+    </crash>
+
+    <firefull>
+      <name>full burning fire</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <property>sim/crashed</property>
+        <property>sim/fire/enabled</property>
+        <greater-than>
+          <property>consumables/fuel/tank/level-lbs</property>
+          <value>80</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <factor>1</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </firefull>
+
+    <firelow>
+      <name>smoking fire</name>
+      <mode>looped</mode>
+      <path>Sounds/rumble.wav</path>
+      <condition>
+        <property>sim/crashed</property>
+        <property>sim/smoke/enabled</property>
+        <greater-than>
+          <property>consumables/fuel/tank/level-lbs</property>
+          <value>0</value>
+        </greater-than>
+      </condition>
+      <volume>
+        <factor>0.4</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </firelow>
+	
+	
+	
+			<rotor>
+			<name>tail_rotor-left</name>
+			<mode>looped</mode>
+			<path>Aircraft/ec130/Sounds/EC120_Fenestron-left.wav</path>
+			<condition>
+				<not>
+					<property>sim/crashed</property>
+				</not>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
+			</condition>
+			<volume>
+				<property>rotors/tail/rpm</property>
+				<offset>-0.02230329835</offset>
+				<factor>0.0002238457</factor>
+			</volume>
+			<pitch>
+				<property>rotors/tail/rpm</property>
+				<offset>0</offset>
+				<factor>0.00021896212</factor>
+			</pitch>
+			<position>
+				<x>5.726</x>
+				<y>0.001</y>
+				<z>0.339</z>
+			</position>
+			<orientation>
+				<x>0</x>
+				<y>1</y>
+				<z>0</z>
+				<inner-angle>90</inner-angle>
+				<outer-angle>170</outer-angle>
+				<outer-gain>0.2</outer-gain>
+			</orientation>
+			<reference-dist>20</reference-dist>
+			<max-dist>2000</max-dist>
+		</rotor>
+
+		<rotor>
+			<name>tail_rotor-right</name>
+			<mode>looped</mode>
+			<path>Aircraft/ec130/Sounds/EC120_Fenestron-right.wav</path>
+			<condition>
+				<not>
+					<property>sim/crashed</property>
+				</not>
+				<not>
+					<property>sim/current-view/internal</property>
+				</not>
+			</condition>
+			<volume>
+				<property>rotors/tail/rpm</property>
+				<offset>-0.02230329835</offset>
+				<factor>0.0002238457</factor>
+			</volume>
+			<pitch>
+				<property>rotors/tail/rpm</property>
+				<offset>0</offset>
+				<factor>0.00021896212</factor>
+			</pitch>
+			<position>
+				<x>5.726</x>
+				<y>0.001</y>
+				<z>0.339</z>
+			</position>
+			<orientation>
+				<x>0</x>
+				<y>-180</y>
+				<z>0</z>
+				<inner-angle>90</inner-angle>
+				<outer-angle>170</outer-angle>
+				<outer-gain>0.2</outer-gain>
+			</orientation>
+			<reference-dist>20</reference-dist>
+			<max-dist>2000</max-dist>
+		</rotor>
+
+
+  </fx>
+
+</PropertyList>

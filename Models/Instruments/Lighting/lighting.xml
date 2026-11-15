@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>selection</object-name>
+    <object-name>cylinders</object-name>
+    <property>controls/lighting/instrument-lights-selection</property>
+    <factor>30</factor>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.024</x-m>
+      <y-m>-0.040</y-m>
+      <z-m>-0.004</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>selection</object-name>
+    <object-name>cylinders</object-name>
+    <visible>true</visible>
+    <action>
+      <name>scrollwheels</name>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/instrument-lights-selection</property>
+        <factor>1</factor>
+        <min>0</min>
+        <max>2</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>select</tooltip-id>
+        <label>Lighting: %s</label>
+        <property>controls/lighting/instrument-lights-selection</property>
+        <mapping>nasal</mapping>
+        <script>
+          var mode = ['DAY','NIGHT1','NIGHT2'];
+          return mode[arg[0]];
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>inst1</object-name>
+    <object-name>cylinder1</object-name>
+    <property>controls/lighting/instrument-lights-norm</property>
+    <factor>270</factor>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.024</x-m>
+      <y-m>0.006</y-m>
+      <z-m>-0.006</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>inst1</object-name>
+    <object-name>cylinder1</object-name>
+    <visible>true</visible>
+    <action>
+      <name>scrollwheel1</name>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/instrument-lights-norm</property>
+        <factor>0.1</factor>
+        <min>0.3</min>
+        <max>0.8</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>inst1</tooltip-id>
+        <label>Instr.Light %1.0f%%</label>
+        <mapping>percent</mapping>
+        <property>controls/lighting/instrument-lights-norm</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>inst2</object-name>
+    <object-name>cylinder2</object-name>
+    <property>controls/lighting/instrument-lights2-norm</property>
+    <factor>270</factor>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+    <center>
+      <x-m>0.024</x-m>
+      <y-m>0.051</y-m>
+      <z-m>-0.006</z-m>
+    </center>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>inst2</object-name>
+    <object-name>cylinder2</object-name>
+    <visible>true</visible>
+    <action>
+      <name>scrollwheel2</name>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/lighting/instrument-lights2-norm</property>
+        <factor>0.1</factor>
+        <min>0.3</min>
+        <max>0.8</max>
+        <wrap>false</wrap>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>inst2</tooltip-id>
+        <label>Syst.Light %1.0f%%</label>
+        <mapping>percent</mapping>
+        <property>controls/lighting/instrument-lights2-norm</property>
+      </binding>
+    </hovered>
+  </animation>
+
+  <!-- dimming -->
+  <animation>
+    <name>all</name>
+    <object-name>panel</object-name>
+    <object-name>cylinders</object-name>
+    <object-name>cylinder1</object-name>
+    <object-name>cylinder2</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>all</object-name>
+    <condition>
+      <property>systems/electrical/outputs/instrument-lights-norm</property>
+      <equals>
+        <property>controls/lighting/instrument-lights-selection</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  1.0 </blue>
+      <factor>0.5</factor>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>all</object-name>
+    <condition>
+      <greater-than>
+        <property>controls/lighting/instrument-lights-selection</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  1.0 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    </emission>
+  </animation>
+
+</PropertyList>

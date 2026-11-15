@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="353"
+   viewBox="0 0 512 353"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="flightreport.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#000000"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.3535534"
+     inkscape:cx="-86.410178"
+     inkscape:cy="-206.49799"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1600"
+     inkscape:window-height="1135"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="0,0"
+       orientation="1,0"
+       id="guide845"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+    <sodipodi:guide
+       position="512,353"
+       orientation="1,0"
+       id="guide847"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,0,255)" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-463.20415)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.05103493px;line-height:100%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:0.57627589px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="256.47171"
+       y="496.86969"
+       id="text854"><tspan
+         sodipodi:role="line"
+         id="tspan852"
+         x="256.47171"
+         y="496.86969"
+         style="stroke-width:0.57627589px">FLIGHT REPORT</tspan></text>
+    <text
+       id="text860"
+       y="553.32904"
+       x="16.042223"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.55657196px;line-height:107.00000525%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:0.61391431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="line-height:107.00000525%;text-align:start;text-anchor:start;stroke-width:0.61391431px"
+         y="553.32904"
+         x="16.042223"
+         id="tspan858"
+         sodipodi:role="line">FLIGHT NUMBER</tspan><tspan
+         style="line-height:107.00000525%;text-align:start;text-anchor:start;stroke-width:0.61391431px"
+         y="579.60455"
+         x="16.042223"
+         sodipodi:role="line"
+         id="tspan862">DURATION</tspan><tspan
+         style="line-height:107.00000525%;text-align:start;text-anchor:start;stroke-width:0.61391431px"
+         y="605.88013"
+         x="16.042223"
+         sodipodi:role="line"
+         id="tspan864">HELI HOBBS</tspan><tspan
+         style="line-height:107.00000525%;text-align:start;text-anchor:start;stroke-width:0.61391431px"
+         y="632.15564"
+         x="16.042223"
+         sodipodi:role="line"
+         id="tspan866">TURBINE HOBBS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.55657196px;line-height:107.00000525%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:0.61391431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="119.27982"
+       y="796.57379"
+       id="text876"><tspan
+         id="tspan874"
+         sodipodi:role="line"
+         x="119.27982"
+         y="796.57379"
+         style="line-height:107.00000525%;text-align:start;text-anchor:start;stroke-width:0.61391431px">EXIT -&gt; PRESS RESET</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.55657196px;line-height:107.00000525%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:0.61391431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="376.89111"
+       y="553.32904"
+       id="flightnr.digits"
+       inkscape:label="#text895"><tspan
+         id="tspan893"
+         sodipodi:role="line"
+         x="376.89111"
+         y="553.32904"
+         style="line-height:107.00000525%;text-align:end;text-anchor:end;stroke-width:0.61391431px">0000</tspan></text>
+    <text
+       inkscape:label="#text895"
+       id="duration.text"
+       y="579.13843"
+       x="376.89111"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.55657196px;line-height:107.00000525%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:0.61391431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="line-height:107.00000525%;text-align:end;text-anchor:end;stroke-width:0.61391431px"
+         y="579.13843"
+         x="376.89111"
+         sodipodi:role="line"
+         id="tspan906">00 h 00 mn</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.55657196px;line-height:107.00000525%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:0.61391431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="376.89111"
+       y="604.90619"
+       id="helihobbs.text"
+       inkscape:label="#text895"><tspan
+         id="tspan910"
+         sodipodi:role="line"
+         x="376.89111"
+         y="604.90619"
+         style="line-height:107.00000525%;text-align:end;text-anchor:end;stroke-width:0.61391431px">00 h 00 mn</tspan></text>
+    <text
+       inkscape:label="#text895"
+       id="turbinehobbs.text"
+       y="630.71558"
+       x="376.89111"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:24.55657196px;line-height:107.00000525%;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans Bold';text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:0.61391431px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="line-height:107.00000525%;text-align:end;text-anchor:end;stroke-width:0.61391431px"
+         y="630.71558"
+         x="376.89111"
+         sodipodi:role="line"
+         id="tspan914">00 h 00 mn</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+  <path>ec130b4_t2.ac</path>
+  <offsets>
+    <z-m>0</z-m>
+    <y-m>0</y-m>
+    <x-m>0</x-m>
+    <pitch-deg>0</pitch-deg>
+  </offsets>
+  
+   
+  <!--shader-->
+  <!-- EC130-B4 -->
+  <effect>
+    <inherits-from>Aircraft/ec130/Models/Effects/bumps</inherits-from>
+    <object-name>fuselage</object-name>
+    <object-name>fuselage_air_in</object-name>
+    <object-name>frontdoorl</object-name>
+    <object-name>frontdoorr</object-name>
+    <object-name>backdoorl</object-name>
+    <object-name>backdoorr</object-name>
+    <object-name>luggagel</object-name>
+    <object-name>luggager</object-name>
+    <object-name>luggager_slight</object-name>
+    <object-name>doorb</object-name>
+    <object-name>exhaust</object-name>
+    <object-name>wirecutter</object-name>
+  </effect>
+
+  <!-- H130 (EC130-T2) -->
+  <effect>
+    <inherits-from>Aircraft/ec130/Models/Effects/bumps</inherits-from>
+    <object-name>fuselage_t2</object-name>
+    <object-name>fuselage_air_in_t2</object-name>
+    <object-name>frontdoorl_t2</object-name>
+    <object-name>frontdoorr_t2</object-name>
+    <object-name>backdoorl_t2</object-name>
+    <object-name>backdoorr_t2</object-name>
+    <object-name>doorbr_lead_t2</object-name>
+    <object-name>top_expipes_t2</object-name>
+	 <object-name>wirecutter</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>Aircraft/ec130/Models/Effects/bumpslug</inherits-from>
+    <object-name>luggagelw</object-name>
+    <object-name>fuselage_luggagelw</object-name>
+    <object-name>luggagerw</object-name>
+    <object-name>fuselage_luggagerw</object-name>
+  </effect>
+
+  <effect>
+   
+	<inherits-from>Aircraft/ec130/Models/Effects/glassout</inherits-from>
+    <object-name>windscreen</object-name>
+
+    <object-name>windows_roof</object-name>
+    <object-name>windowl</object-name>
+    <object-name>windowr</object-name>
+    <object-name>windowr_t2</object-name>
+    <object-name>windowbl</object-name>
+    <object-name>windowbr</object-name>
+    <object-name>windowbr_t2</object-name>
+    <object-name>fuel</object-name>
+    <object-name>pilotw</object-name>
+   
+  </effect>
+  
+  
+  <effect>
+    <inherits-from>Aircraft/ec130/Models/Effects/mirror/mirror</inherits-from>
+        <object-name>mirror_glass</object-name>
+  </effect>
+  
+
+  
+  
+  
+  <effect>
+  <inherits-from>Effects/glass</inherits-from>
+ <object-name>windscreen_inside</object-name>
+    <object-name>windscreen_inside_shader</object-name>
+<object-name>windowblin</object-name>
+<object-name>windowlin</object-name>
+<object-name>pilotwinin</object-name>
+<object-name>windows_roofin</object-name>
+<object-name>windowbrin</object-name>
+
+<object-name>windowbr_t2in</object-name>
+<object-name>windowrin</object-name>
+<object-name>windowr_t2in</object-name>
+
+</effect>
+  
+
+  
+
+  
+  <effect>
+    <inherits-from>Aircraft/ec130/Models/Effects/mirror/mirror</inherits-from>
+    <object-name>mirror_glass</object-name>
+	
+  </effect>
+
+  
+
+  <!--  REMBRANDT support for transparent objects -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>basket_mesh_left</object-name>
+    <object-name>basket_mesh_left_cover</object-name>
+    <object-name>basket_mesh_right</object-name>
+    <object-name>basket_mesh_right_cover</object-name>
+    <object-name>landing_light</object-name>
+    <object-name>landing_light_gear_left</object-name>
+    <object-name>landing_light_gear_right</object-name>
+    <object-name>navlight_left</object-name>
+    <object-name>navlight_right</object-name>
+    <object-name>navlight_back</object-name>
+    <object-name>taxilight</object-name>
+    <object-name>Plane.005X</object-name>
+    <object-name>Plane.005Xb</object-name>
+    <object-name>Plane.005Xbsl</object-name>
+    <object-name>Plane.005Xbsr</object-name>
+    <object-name>basket_mesh_left</object-name>
+    <condition>
+      <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
+  </effect>
+
+  
+</PropertyList>

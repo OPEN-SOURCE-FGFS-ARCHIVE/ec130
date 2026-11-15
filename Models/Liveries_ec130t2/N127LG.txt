@@ -1,0 +1,28 @@
+   Helicopter H130 (EC130-T2)
+   --------------------------
+
+   Registration: N127LG
+   C/N: 8055 (2015)
+   Operator: AirMethods Corp., Flight For Life Colorado
+   Operator Id: Lifeguard 6
+   Location: Denver-Aurora metropolitan area, Centennial Airport (KAPA), USA
+
+   The helicopter started operation on May 1, 2017 and provides transportation
+   to pediatric patients within a 120-mile service area, including Colorado,
+   southwestern Nebraska and southern Wyoming.
+
+   Source: http://www.helis.com/database
+
+
+   Homepage:  https://www.flightforlifecolorado.org/FLC/Home/
+   Web-Links: https://www.airmethods.com/
+   Facebook:  https://www.facebook.com/FlightForLifeColorado/
+   Twitter:   https://twitter.com/fflco
+
+
+   Personal Notes of the Livery Editor (mhab):
+   ------------------------------------------
+   Extraordinary painting, unusual specialized use of helicopter.
+   Limitations: special interior equipment unknown
+
+   last update: 2017-05-12

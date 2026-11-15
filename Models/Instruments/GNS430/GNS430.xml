@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<!--texture made by Heiko H. Schulz-->
+	<name>GNS430</name>
+	<path>GNS430.ac</path>
+
+	 <animation>
+		<type>material</type>
+			<object-name>Cube.001</object-name>
+
+		<emission>
+			<red>0.28</red>
+			<green>0.40</green>
+			<blue>0.24</blue>
+<factor-prop>controls/lighting/instrument-lights</factor-prop>
+		</emission>
+	</animation>
+
+	 <animation>
+		<type>material</type>
+
+			<object-name>ComVLOCkhz.knob</object-name>
+			<object-name>cursor.knob</object-name>
+			<object-name>NavVolume.knob</object-name>
+			<object-name>PwrComVol.knob</object-name>
+			<object-name>ComFlipFlop.btn</object-name>
+			<object-name>cdi.btn</object-name>
+			<object-name>obs.btn</object-name>
+			<object-name>msg.btn</object-name>
+			<object-name>fpl.btn</object-name>
+			<object-name>proc.btn</object-name>
+			<object-name>RangeKeys.btn</object-name>
+			<object-name>directto.btn</object-name>
+			<object-name>menu.btn</object-name>
+			<object-name>clear.btn.001</object-name>
+			<object-name>enter.btn</object-name>
+
+		<emission>
+			<red>0.48</red>
+			<green>0.80</green>
+			<blue>0.44</blue>
+<factor-prop>controls/lighting/instrument-lights</factor-prop>
+		</emission>
+	</animation>
+
+
+
+ <model>
+  <name>screen</name>
+    <path>Aircraft/Instruments-3d/FG1000/GDU104X/GDU-1040.2.xml</path>
+    <offsets>
+      <x-m>0.0095</x-m>
+      <y-m>-0.006</y-m>
+       <z-m>0.0</z-m>
+      <roll-deg>    0.000 </roll-deg>
+      <pitch-deg>   0.00 </pitch-deg>
+      <heading-deg> 0.000 </heading-deg>
+    </offsets>
+	<overlay>
+		 <animation n="400">
+    <type>scale</type>
+    <property>constants/zero</property>
+    <x-offset>1.0</x-offset>
+    <y-offset>0.48</y-offset>
+      <z-offset>0.35</z-offset>
+   </animation>
+  </overlay>
+  </model>
+
+
+  <animation>
+        <type>select</type>
+<object-name>screen</object-name>
+
+<condition>
+          <equals>
+                <property>controls/electric/avionics-switch</property>
+                <value>1</value>
+				</equals>
+			</condition>
+
+    </animation>
+
+<!-- test anim  -->
+<animation>
+        <type>select</type>
+<object-name>Panel</object-name>	
+<object-name>screw.000</object-name>
+<object-name>VolNAV</object-name>	
+<object-name>AsSwitchNav</object-name>	
+<object-name>NavInner</object-name>	
+<object-name>NavOuter</object-name>
+<object-name>Lamp3</object-name>	
+<object-name>Lamp4</object-name>	
+<object-name>HDG</object-name>	
+<object-name>AP.L0</object-name>
+<object-name>AP.R0</object-name>	
+<object-name>AP.L1</object-name>	
+<object-name>AP.R1</object-name>	
+<object-name>AP.L2</object-name>
+<object-name>AP.R2</object-name>	
+<object-name>AP.L3</object-name>
+<object-name>AP.R3</object-name>	
+<object-name>AP.L4</object-name>
+<object-name>AP.R4</object-name>	
+<object-name>AP.L5</object-name>	
+<object-name>AP.R5</object-name>	
+<object-name>screw.001</object-name>
+<object-name>AltInner</object-name>	
+<object-name>AltOuter</object-name>	
+<object-name>Lamp2</object-name>	
+<object-name>SoftKey.000</object-name>
+<object-name>SoftKey.001</object-name>	
+<object-name>SoftKey.002</object-name>	
+<object-name>SoftKey.003</object-name>	
+<object-name>SoftKey.004</object-name>
+<object-name>SoftKey.005</object-name>	
+<object-name>SoftKey.006</object-name>	
+
+<object-name>SoftKey.007</object-name>	
+<object-name>SoftKey.008</object-name>
+<object-name>SoftKey.009</object-name>	
+<object-name>SoftKey.010</object-name>	
+<object-name>SoftKey.011</object-name>	
+<object-name>FmsInner</object-name>
+<object-name>FmsOuter</object-name>	
+<object-name>screw.003</object-name>	
+<object-name>CLR</object-name>	
+<object-name>ENT</object-name>
+<object-name>FPL</object-name>	
+<object-name>PROC</object-name>	
+<object-name>DidectTo</object-name>	
+<object-name>MENU</object-name>
+<object-name>PAN</object-name>	
+<object-name>Cover</object-name>
+<object-name>PANLeft</object-name>	
+<object-name>PANUp</object-name>
+<object-name>PANRight</object-name>	
+<object-name>PANDown</object-name>	
+<object-name>CRS</object-name>	
+<object-name>BARO</object-name>
+<object-name>ComInner</object-name>	
+<object-name>ComOuter</object-name>	
+<object-name>AsSwitchCOM</object-name>	
+<object-name>Lamp1</object-name>
+<object-name>VolCom</object-name>	
+<object-name>screw.002</object-name>	
+	
+
+<condition>
+<not><or>
+				<equals>
+				  <property>sim/current-view/internal</property>
+				  <value>true</value>
+				  </equals>
+				  
+				  <equals>
+				  <property>sim/current-view/internal</property>
+				  <value>false</value>
+				  </equals>
+				 
+				 </or>  </not>
+			</condition>
+
+    </animation>	
+  <!-- buttons and bits -->
+
+   <animation>
+    <type>knob</type>
+    <object-name>ComVLOCmhz.knob</object-name>
+    <action>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>NAV_VOL</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+  </animation>
+
+
+  <animation>
+    <type>knob</type>
+    <object-name>cursor.knob</object-name>
+    <action>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>HEADING</notification>
+      </binding>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/fg1000/screen1/heading-bug-deg</property>
+        <factor>15</factor>
+      </binding>
+    </action>
+    <shift-action>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>HEADING_PRESS</notification>
+      </binding>
+    </shift-action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>HDG</tooltip-id>
+        <label>Change heading bug (Shift to sync)</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>knob</type>
+    <object-name>ComVLOCmhz.knob</object-name>
+    <action>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>COM_VOL</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>cdi.btn</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>CRS_CENTER</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>ComInner</tooltip-id>
+        <label>Center CDI on current VOR</label>
+      </binding>
+    </hovered>
+  </animation>
+
+
+   <animation>
+    <type>pick</type>
+
+    <object-name>directto.btn</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>DTO</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>DidectTo</tooltip-id>
+        <label>Display Direct To</label>
+      </binding>
+    </hovered>
+  </animation>
+
+   <animation>
+    <type>pick</type>
+    <object-name>menu.btn</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>MENU</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>MENU</tooltip-id>
+        <label>Display Menu</label>
+      </binding>
+    </hovered>
+  </animation>
+
+   <animation>
+    <type>pick</type>
+    <object-name>fpl.btn</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>FPL</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>MENU</tooltip-id>
+        <label>Display Flight Plan page</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>proc.btn</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>PROC</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>PROC</tooltip-id>
+        <label>Display Procedures page</label>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>clear.btn.001</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>CLR</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+    <action>
+      <button>1</button>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>CLR_HOLD</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>CLR</tooltip-id>
+        <label>Clear entry (Middle mouse button to display Navigation Map)</label>
+      </binding>
+    </hovered>
+  </animation>
+
+
+   <animation>
+    <type>pick</type>
+    <object-name>enter.btn</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>FG1000HardKeyPushed</command>
+        <device>1</device>
+        <notification>ENT</notification>
+        <offset>1</offset>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>ENT</tooltip-id>
+        <label>Complete data entry, or confirm selection</label>
+      </binding>
+    </hovered>
+  </animation>
+
+</PropertyList>

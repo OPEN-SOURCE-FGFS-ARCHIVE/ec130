@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+	<name>interior-shadow</name>
+	<inherits-from>Effects/model-interior</inherits-from>
+	<parameters>
+		<texture n="4">
+		<type>cubemap</type>
+		<images>
+			<positive-x>Aircraft/ec130/Models/Effects/cubemaps/shadow/0004.png</positive-x>
+			<negative-x>Aircraft/ec130/Models/Effects/cubemaps/shadow/0002.png</negative-x>
+			<positive-y>Aircraft/ec130/Models/Effects/cubemaps/shadow/0001.png</positive-y>
+			<negative-y>Aircraft/ec130/Models/Effects/cubemaps/shadow/0003.png</negative-y>
+			<positive-z>Aircraft/ec130/Models/Effects/cubemaps/shadow/0006.png</positive-z>
+			<negative-z>Aircraft/ec130/Models/Effects/cubemaps/shadow/0005.png</negative-z>
+		</images>
+		</texture>
+		<opacity-cube-center type="vec3d" n="0">-3.92 0.0 -0.21</opacity-cube-center>
+		<opacity-cube-scale type="vec3d" n="0"> 2.2 2.0 1.8</opacity-cube-scale>
+		<opacity-cube-angle type="float">0.0</opacity-cube-angle>
+	</parameters>
+</PropertyList>

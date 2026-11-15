@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>gsdi.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object>face</object>
+    <object>face.001</object>
+	  <object>face.002</object>
+    <object>vneedle</object>
+    <object>uneedle</object>
+    <condition>
+      <property>sim/model/ec130/show_gsdi</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>uneedle</object-name>
+    <property>instrumentation/gsdi/drift-u-kt</property>
+    <factor>0.005</factor>
+    <min-m>-0.025</min-m>
+    <max-m> 0.025</max-m>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>vneedle</object-name>
+    <property>instrumentation/gsdi/drift-v-kt</property>
+    <factor>0.005</factor>
+    <min-m>-0.025</min-m>
+    <max-m> 0.025</max-m>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- dimming -->
+  <animation>
+    <type>material</type>
+    <object>vneedle</object>
+    <object>uneedle</object>
+    <object>Face.002</object>
+    <condition>
+      <property>systems/electrical/outputs/instrument-lights-norm</property>
+      <equals>
+        <property>controls/lighting/instrument-lights-selection</property>
+        <value>0</value>
+      </equals>
+    </condition>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  1.0 </blue>
+      <factor>0.5</factor>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object>vneedle</object>
+    <object>uneedle</object>
+    <object>Face.002</object>
+    <condition>
+      <greater-than>
+        <property>controls/lighting/instrument-lights-selection</property>
+        <value>0</value>
+      </greater-than>
+    </condition>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  1.0 </blue>
+      <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+    </emission>
+  </animation>
+  
+  
+  <!-- Coompositor lights-->
+  
+  <light>
+  <name>dash1</name>
+  <type>spot</type>
+  <position>
+    <x-m>0.017</x-m>
+    <y-m>0.0</y-m>
+    <z-m>0</z-m>
+  </position>
+  <direction>
+    <x>-1.0</x>
+    <y>0</y>
+    <z>0</z>
+  </direction>
+  <ambient>
+    <r>0</r>
+    <g>0</g>
+    <b>1</b>
+    <a>1</a>
+  </ambient>
+  <diffuse>
+    <r>0</r>
+    <g>1</g>
+    <b>0</b>
+    <a>1</a>
+  </diffuse>
+  <specular>
+    <r>0</r>
+    <g>1</g>
+    <b>0</b>
+    <a>1</a>
+  </specular>
+    <color>
+      <r>0.8</r>
+      <g>0.5</g>
+      <b>0.5</b>
+      <a>1.0</a>
+    </color>
+ <attenuation>
+    <c>1</c>
+    <l>1.5</l>
+    <q>3.5</q>
+  </attenuation>
+  <spot-exponent>6</spot-exponent>
+  <spot-cutoff>70</spot-cutoff>
+  <range-m>0.05</range-m>
+   <intensity>0.1</intensity>
+  <dim-factor>
+    <property>systems/electrical/outputs/instrument-lights-norm</property>
+  </dim-factor>
+ 
+</light>
+
+
+<animation>
+  <type>select</type>
+  <object-name>dash1</object-name>
+		
+  <condition>
+  
+   <equals>
+    <property>controls/lighting/turn-off-lights</property>
+    <value>true</value>
+   </equals>
+  
+  </condition>
+ </animation>
+
+</PropertyList>

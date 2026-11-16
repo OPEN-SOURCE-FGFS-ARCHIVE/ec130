@@ -1,7 +1,38 @@
-This project is about the "Airbus Helicopter EC130 B4 / H130" light helicopter models for the OpenSource flight-simulator "Flightgear".
+# Open Source FlightGear Archive: ec130
 
-Find more info in the gitlab Wiki: https://gitlab.com/mhab/ec130/wikis/home
+> Archival Date: 15.11.2026
 
-Find detailed info about this project in Flightgear Wiki: http://wiki.flightgear.org/H130
+> Source Origin: Recovered from https://sites.google.com/view/fgukhangar/flightgear-uk-home-page/hangar
 
-In order to use this aircraft model you need to install Flightgear flight simulator. Flightgear Main Web Site: http://www.flightgear.org/
+This item is part of the **[Open Source FlightGear Archive](https://github.com/OPEN-SOURCE-FGFS-ARCHIVE/)**, which preserves FlightGear aircraft, addons, materials and assets with genuine adherence to open-source principles and proper version-control (DVCS) history, where centralized or restricted distribution attempts have obscured it.
+
+Run by **SP-NTX** - sp.ntx.flightgear@gmail.com
+
+---
+
+## Provenance
+
+- **Checksum of downloaded zip (SHA-256):** `4feb9508bd4cf56cfae2fa5f3205e5884746cd2b88f8e352a7ede31b925e8de4`
+
+---
+
+## Licensing & Compliance
+
+- **Original Code & Derivatives:** GNU GPL (or compatible upstream terms).
+- **License declared by GitHub:** GNU General Public License v2.0 (`GPL-2.0`)
+- **Archiving basis:** Archived under the Archive's rules: GNU GPL only, no CC-licensed content.
+- **Attribution:** All original authors, modellers, FDM and systems contributors retain full credit. Author names, commit history and provenance are preserved unchanged.
+
+---
+
+## Mirror Status & Disclaimer
+
+This is a passive mirror of publicly available third-party material. The archive maintainer is not the author of the content and does not audit it file by file. Files are provided **"AS IS"**, without warranty of any kind, including merchantability, fitness for a particular purpose and non-infringement. To the extent permitted by law, the maintainer is not liable for damages arising from their use.
+
+---
+
+## Copyright Infringement & Takedown Policy
+
+Verified removal requests: sp.ntx.flightgear@gmail.com OR an Issue on this GitHub repository. Please include the affected files and proof of ownership. Requests will be reviewed and answered within 31 days.
+
+<!-- generated-by: fgfs-archive-tool -->
